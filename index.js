@@ -1,6 +1,14 @@
 const { isTypeDate, toMonthDayYear } = require("./helpers/functions");
 
 const getDateDiff = (dateOne, dateTwo = new Date()) => {
+  // validate insert dates
+  const testDateOne = isTypeDate(dateOne) ? dateToString(dateOne) : dateOne;
+  const testDateTwo = isTypeDate(dateTwo) ? dateToString(dateTwo) : dateTwo;
+
+  if (!validateDate(testDateOne) || !validateDate(testDateTwo)) {
+    return "A data inserida é inválida! (invalid-date-error)";
+  }
+
   // Receive the dates and format to time Date if necessary
   const d1 = isTypeDate(dateOne) ? dateOne : new Date(toMonthDayYear(dateOne));
   const d2 = isTypeDate(dateTwo) ? dateTwo : new Date(toMonthDayYear(dateTwo));
