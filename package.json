@@ -10,6 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/jordaoqualho/formata-data.git"
   },
+  "keywords": [
+    "brasil",
+    "dates",
+    "datas",
+    "formatar data",
+    "diferenca entre datas",
+    "validação de datas",
+    "date validate",
+    "formate dates"
+  ],
   "author": "Jordão Qualho",
   "license": "ISC",
   "bugs": {
