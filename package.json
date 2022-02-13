@@ -1,12 +1,19 @@
 {
   "name": "formata-data",
   "version": "1.0.0",
-  "description": "",
+  "description": "Vários funcões para facilitar a formatação e utiização de datas em javascript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordaoqualho/formata-data.git"
+  },
+  "author": "Jordão Qualho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordaoqualho/formata-data/issues"
+  },
+  "homepage": "https://github.com/jordaoqualho/formata-data#readme"
 }

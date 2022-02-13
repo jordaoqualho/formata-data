@@ -1,9 +1,6 @@
 # formata-data
 
-[![Build Status](https://travis-ci.org/wagoid/formata-data.svg?branch=master)](https://travis-ci.org/wagoid/formata-data)
-[![Coverage Status](https://coveralls.io/repos/github/wagoid/formata-data/badge.svg?branch=master)](https://coveralls.io/github/wagoid/formata-data?branch=master)
-
-Busca por ceps do Brasil utilizando o serviço ViaCEP
+Vários funcões para facilitar a formatação e utiização de datas em javascript.
 
 ### Instalação
 
