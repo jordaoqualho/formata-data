@@ -1,42 +1,92 @@
 # formata-data
 
-Vários funcões para facilitar a formatação e utiização de datas em javascript.
+Functions to facilitate the formatting and use of data in javascript.
 
-### Instalação
+### Installing
 
-`npm install formata-data`
-
-### Como usar
-
-```javascript
-var buscaCep = require("formata-data");
-
-buscaCep("01001-000", { sync: false, timeout: 1000 })
-  .then((endereco) => {
-    console.log(endereco);
-  })
-  .catch((erro) => {
-    console.log(
-      `Erro: statusCode ${erro.statusCode} e mensagem ${erro.message}`
-    );
-  });
+```
+npm install formata-data
 ```
 
-Ou, caso você queira uma requisição síncrona, passe true no segundo parâmetro:
+## Functions
+
+- [getDateDiff](#getdatediff)
+- [validateDate](#validatedate)
+- [getWritenDate](#getwritendate)
+- [dateToString](#datetostring)
+
+<br />
+
+## getDateDiff
+
+Function that takes one or two dates and returns the difference in days between the dates.
 
 ```javascript
-var resposta = buscaCep("01001-000", { sync: true });
-if (!resposta.hasError) {
-  console.log(resposta);
-} else {
-  console.log(
-    `Erro: statusCode ${resposta.statusCode} e mensagem ${resposta.message}`
-  );
-}
+const { getDateDiff } = require("formata-data");
+
+getDateDiff("03/10/1997", "03/10/2022");
+// returns = 9131 (difference in days between dates)
+
+getDateDiff("03/10/1997");
+// with only one date, the second one is set as the current date.
+
+getDateDiff("00/10/1997");
+// if the date is invalid the function return an error message.
 ```
 
-O segundo parâmetro da função é um options, nele você pode definir o valor do timeout do request (em milisegundos). Exemplo:
+<br />
+
+## validateDate
+
+Function that takes one date and returns true if the date is valid and false otherwise.
 
 ```javascript
-buscaCep("01001-000", { timeout: 2000 });
+const { validateDate } = require("formata-data");
+
+validateDate("03/10/1997");
+// returns true
+
+validateDate("00/10/1997");
+// returns false
 ```
+
+<br />
+
+## getWritenDate
+
+Function that takes one date and returns the writen form of it.
+
+```javascript
+const { getWritenDate } = require("formata-data");
+
+getWritenDate("03/10/1997");
+// returns October 3th, 1997.
+
+getWritenDate("03/10/1997", "pt");
+// can be set to portuguese returning: 03 de Outubro de 1997
+
+getWritenDate("00/10/1997");
+// returns an error message if the date is invalid.
+```
+
+<br />
+
+## dateToString
+
+Function that takes one date Date format and transform it to string.
+
+```javascript
+const { dateToString } = require("formata-data");
+
+dateToString(new Date());
+// returns 13/02/2022 (the current date).
+
+dateToString("03/10/1997");
+// if the date is not type Date it returns an error message.
+```
+
+<br />
+
+This is my first package!
+<br />
+Feel free if you have any questions or suggestions.

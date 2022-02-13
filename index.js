@@ -1,12 +1,12 @@
 const { isTypeDate, toMonthDayYear } = require("./helpers/functions");
 
 const getDateDiff = (dateOne, dateTwo = new Date()) => {
-  // validate insert dates
+  // Validate insert dates
   const testDateOne = isTypeDate(dateOne) ? dateToString(dateOne) : dateOne;
   const testDateTwo = isTypeDate(dateTwo) ? dateToString(dateTwo) : dateTwo;
 
   if (!validateDate(testDateOne) || !validateDate(testDateTwo)) {
-    return "A data inserida é inválida! (invalid-date-error)";
+    return "Invalid date inserted!";
   }
 
   // Receive the dates and format to time Date if necessary
@@ -47,7 +47,7 @@ const validateDate = (dateValue) => {
   return true;
 };
 
-const getDataSimplificada = (date, language = "pt") => {
+const getWritenDate = (date, language = "en") => {
   const formatedDate = isTypeDate(date) ? dateToString(date) : date;
 
   if (!validateDate(formatedDate))
@@ -95,17 +95,18 @@ const getDataSimplificada = (date, language = "pt") => {
   }
 };
 
-const dateToString = (data) => {
-  const day = ("0" + data.getDate()).slice(-2);
-  const month = ("0" + (data.getMonth() + 1)).slice(-2);
-  const year = data.getFullYear();
+const dateToString = (date) => {
+  if (!isTypeDate(date)) return "This is not a type date format!";
+
+  const day = ("0" + date.getDate()).slice(-2);
+  const month = ("0" + (date.getMonth() + 1)).slice(-2);
+  const year = date.getFullYear();
   return `${day}/${month}/${year}`;
 };
 
 module.exports = {
   getDateDiff,
-  isTypeDate,
   validateDate,
-  getDataSimplificada,
+  getWritenDate,
   dateToString,
 };
