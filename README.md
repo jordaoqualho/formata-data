@@ -1,6 +1,6 @@
 # formata-data
 
-Functions to facilitate the formatting and use of data in javascript.
+Functions to facilitate the formatting and use of date in javascript.
 
 ### Installing
 
