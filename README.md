@@ -1,4 +1,4 @@
-# Formata Data
+# [Formata Data](https://www.npmjs.com/package/formata-data) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://www.dataschool.io/how-to-contribute-on-github/)
 
 This package contains a handfull of functions that makes working with dates in javascprit a pice o cake, making possible to parse, validate, manipulate, and formatte dates with ease.
 
