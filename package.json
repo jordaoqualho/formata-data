@@ -4,7 +4,10 @@
   "description": "Vários funcões para facilitar a formatação e utiização de datas em javascript.",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "test": "set NODE_ENV=test && jest --silent --detectOpenHandles --verbose --watchAll",
+        "coverage": "set NODE_ENV=test && jest --coverage --silent --detectOpenHandles"
+
   },
   "repository": {
     "type": "git",
@@ -25,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/jordaoqualho/formata-data/issues"
   },
-  "homepage": "https://github.com/jordaoqualho/formata-data#readme"
+  "homepage": "https://github.com/jordaoqualho/formata-data#readme",
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
 }
